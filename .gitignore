@@ -38,5 +38,4 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
-candidates1.xlsx
-candidates2.xlsx
+candidates*.xlsx
