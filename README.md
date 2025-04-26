@@ -4,24 +4,22 @@ This application allows uploading candidates from a frontend and processing them
 
 ## Project Structure
 
-- `frontend/`: Angular 16+ application with Angular Material
-- `backend/`: NestJS server to process the information
+- `frontend/`: Angular 16+ application with Angular Material using NgModules
+- `backend/`: NestJS server to process and serve endpoints
 
 ## Features
 
 - Form to upload candidate data (name, surname, Excel file)
 - Processing of the Excel file in the backend
-- Displaying candidates in a table
-- Incremental data storage
+- Displaying candidates in a table on the frontend
+- Incremental in-memory data storage (for demo)
 
 ## Technologies Used
 
-- Angular 16+ with Angular Material
-- Reactive Forms
+- Angular 16+ with Angular Material (NgModules architecture)
+- RxJS for reactive data flow
 - NestJS
-- Standalone components
-- Functional and reactive programming
-- Jest for testing
+- Jest for testing (frontend and backend)
 
 ## Prerequisites
 
@@ -58,14 +56,11 @@ npm run start:dev
 
 ## Usage
 
-1. Open your browser and go to `http://localhost:4200`
-2. Fill out the form with name and surname
-3. Upload an Excel file with the required columns:
-   - Seniority (junior | senior)
-   - Years of experience (number)
-   - Availability (boolean)
-4. Submit the form
-5. View the results in the table
+1. Open your browser and go to `http://localhost:4200` (frontend)
+2. Fill out the form with name and surname.
+3. Upload an Excel file with the required columns.
+4. Click on the "Submit" button.
+5. The data will be processed and displayed in a table on the frontend.
 
 ## Excel Format
 
@@ -95,6 +90,5 @@ npm test
 
 ## Development Notes
 
-- The application uses Angular standalone components for better modularity
 - Reactive programming with RxJS is applied for data handling
 - Data is stored incrementally in memory (for production, a database is recommended)
