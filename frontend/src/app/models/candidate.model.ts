@@ -1,0 +1,19 @@
+export enum Seniority {
+  JUNIOR = 'junior',
+  SENIOR = 'senior',
+}
+
+export interface CandidateExcelData {
+  seniority: Seniority;
+  yearsOfExperience: number;
+  availability: boolean;
+}
+
+export interface Candidate {
+  id?: string;
+  name: string;
+  surname: string;
+  seniority: Seniority;
+  yearsOfExperience: number;
+  availability: boolean;
+}

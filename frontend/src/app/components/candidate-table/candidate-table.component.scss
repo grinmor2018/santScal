@@ -1,0 +1,26 @@
+.table-container {
+  margin: 20px auto;
+  max-width: 1000px;
+}
+table {
+  width: 100%;
+}
+.availability-indicator {
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+}
+.availability-indicator.available {
+  background-color: #c8e6c9;
+  color: #2e7d32;
+}
+.availability-indicator:not(.available) {
+  background-color: #ffcdd2;
+  color: #c62828;
+}
+.no-data {
+  text-align: center;
+  padding: 20px;
+  font-style: italic;
+  color: #757575;
+}

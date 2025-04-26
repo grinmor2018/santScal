@@ -1,0 +1,26 @@
+.form-card {
+  max-width: 600px;
+  margin: 20px auto;
+}
+.full-width {
+  width: 100%;
+  margin-bottom: 15px;
+}
+.file-input-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+.file-name {
+  margin-left: 10px;
+  font-size: 14px;
+}
+.file-error {
+  color: #f44336;
+  font-size: 12px;
+  margin-bottom: 15px;
+}
+.button-container {
+  display: flex;
+  justify-content: flex-end;
+}

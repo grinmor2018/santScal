@@ -1,0 +1,37 @@
+# Dependencias
+node_modules/
+npm-debug.log
+yarn-error.log
+.pnpm-debug.log
+
+# Archivos de configuración IDE
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# Archivos compilados
+/dist/
+/tmp/
+/out-tsc/
+/bazel-out/
+
+# Archivos de entorno
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Archivos de caché
+.angular/cache/
+.sass-cache/
+/connect.lock
+/coverage/
+/libpeerconnection.log
+testem.log
+/typings/
+
+# System Files
+.DS_Store
+Thumbs.db 
