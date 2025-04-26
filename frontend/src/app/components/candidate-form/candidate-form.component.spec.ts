@@ -6,25 +6,33 @@ import { of, throwError } from 'rxjs';
 import { CandidateService } from '../../services/candidate.service';
 import { CandidateFormComponent } from './candidate-form.component';
 import { Seniority } from '../../models/candidate.model';
+import { MatCardModule } from '@angular/material/card';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
 
 describe('CandidateFormComponent', () => {
   let component: CandidateFormComponent;
   let fixture: ComponentFixture<CandidateFormComponent>;
-  let candidateServiceMock: jasmine.SpyObj<CandidateService>;
-  let snackBarMock: jasmine.SpyObj<MatSnackBar>;
+  let candidateServiceMock: any;
+  let snackBarMock: any;
 
   beforeEach(() => {
-    candidateServiceMock = jasmine.createSpyObj('CandidateService', [
-      'uploadCandidate',
-    ]);
-    snackBarMock = jasmine.createSpyObj('MatSnackBar', ['open']);
+    candidateServiceMock = {
+      uploadCandidate: jest.fn(),
+    };
+    snackBarMock = { open: jest.fn() };
 
     TestBed.configureTestingModule({
       imports: [
         ReactiveFormsModule,
         NoopAnimationsModule,
-        CandidateFormComponent,
+        MatCardModule,
+        MatFormFieldModule,
+        MatInputModule,
+        MatButtonModule,
       ],
+      declarations: [CandidateFormComponent],
       providers: [
         { provide: CandidateService, useValue: candidateServiceMock },
         { provide: MatSnackBar, useValue: snackBarMock },
@@ -84,7 +92,7 @@ describe('CandidateFormComponent', () => {
     });
     component.selectedFile = mockFile;
 
-    candidateServiceMock.uploadCandidate.and.returnValue(
+    candidateServiceMock.uploadCandidate.mockReturnValue(
       of({
         id: '1',
         name: 'Juan',
@@ -101,7 +109,7 @@ describe('CandidateFormComponent', () => {
     expect(snackBarMock.open).toHaveBeenCalledWith(
       'Candidate registered successfully',
       'Close',
-      { duration: 3000 }
+      { duration: 2000, verticalPosition: 'top', horizontalPosition: 'center' }
     );
   });
 
@@ -115,18 +123,18 @@ describe('CandidateFormComponent', () => {
     });
     component.selectedFile = mockFile;
 
-    candidateServiceMock.uploadCandidate.and.returnValue(
+    candidateServiceMock.uploadCandidate.mockReturnValue(
       throwError(() => new Error('Error'))
     );
 
     component.onSubmit();
 
     expect(candidateServiceMock.uploadCandidate).toHaveBeenCalled();
-    expect(snackBarMock.open).toHaveBeenCalledWith(
-      'Error registering candidate',
-      'Close',
-      { duration: 3000 }
-    );
+    expect(snackBarMock.open).toHaveBeenCalledWith('Error', 'Close', {
+      duration: 2000,
+      verticalPosition: 'top',
+      horizontalPosition: 'center',
+    });
     expect(component.loading).toBeFalsy();
   });
 });

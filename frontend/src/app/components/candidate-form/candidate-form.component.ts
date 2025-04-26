@@ -55,7 +55,7 @@ export class CandidateFormComponent {
 
     this.candidateService.uploadCandidate(formData).subscribe({
       next: (response) => {
-        this.snackBar.open('Candidate registered successfully', 'CERRAR', {
+        this.snackBar.open('Candidate registered successfully', 'Close', {
           duration: 2000,
           verticalPosition: 'top',
           horizontalPosition: 'center',
@@ -69,7 +69,7 @@ export class CandidateFormComponent {
           error?.error?.message ||
           error?.message ||
           'Error registering candidate';
-        this.snackBar.open(errMsg, 'CERRAR', {
+        this.snackBar.open(errMsg, 'Close', {
           duration: 2000,
           verticalPosition: 'top',
           horizontalPosition: 'center',
