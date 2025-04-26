@@ -7,7 +7,8 @@ yarn-error.log
 # Archivos de configuración IDE
 .idea/
 .vscode/
-.vs/
+frontend/.vs/
+backend/dist/
 *.sublime-project
 *.sublime-workspace
 
@@ -36,4 +37,6 @@ testem.log
 
 # System Files
 .DS_Store
-Thumbs.db 
+Thumbs.db
+candidates1.xlsx
+candidates2.xlsx
