@@ -7,6 +7,7 @@ yarn-error.log
 # Archivos de configuración IDE
 .idea/
 .vscode/
+.vs/
 *.sublime-project
 *.sublime-workspace
 
@@ -15,6 +16,7 @@ yarn-error.log
 /tmp/
 /out-tsc/
 /bazel-out/
+dist/
 
 # Archivos de entorno
 .env
